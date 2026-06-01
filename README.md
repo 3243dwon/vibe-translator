@@ -1,16 +1,10 @@
 # 🌐 vibe-translator
 
-> A Claude skill that bridges content across the **English, Chinese, and Japanese** cultural spheres — without it sounding translated.
+> A Claude skill that adapts content across **any language, culture, and platform** — without it sounding translated.
 
-Google Translate moves *words* between languages. Single-market content tools rewrite *within* one culture. `vibe-translator` does the hard thing neither does: it carries content **across** the three big cultural spheres — Western, Chinese, Japanese — and rebuilds it so a native of the destination would never guess it started somewhere else.
+Google Translate moves *words* between languages. `vibe-translator` does the harder thing: it carries content **across cultures and platforms** and rebuilds it so a native of the destination would never guess it started somewhere else.
 
-The hardest, most valuable cases are cross-cultural: an English founder's announcement that needs to land on 小红书, a Japanese product update that needs Western directness, a Chinese investing take rebuilt for an English audience. **That cross-cultural bridge is the whole point.**
-
----
-
-## Why this isn't another localizer
-
-Most platform-content skills operate inside a single language — Chinese platform → Chinese platform. `vibe-translator` is built for the **trilingual, bidirectional** problem (EN ↔ ZH ↔ JP), where the gap isn't vocabulary, it's *culture*: directness vs. indirectness, self-promotion norms, individual vs. collective framing, humor that doesn't survive translation, and the unspoken "would a local actually post this?" test.
+The gap that matters isn't vocabulary — it's *culture*: directness vs. indirectness, self-promotion norms, individual vs. collective framing, humor that doesn't survive a literal hop, formality register, emoji and formatting conventions, and the unspoken "would a local actually post this?" test. Works in **any direction, any language pair**.
 
 ---
 
@@ -18,43 +12,41 @@ Most platform-content skills operate inside a single language — Chinese platfo
 
 **Input** — an English Twitter/X hot take:
 
-> "Hot take: everyone's obsessed with NVIDIA but the real AI trade is power & cooling. You can't run a GPU you can't cool. Networking, energy, thermal — that's where the next 10x is hiding. NVDA is consensus. The picks-and-shovels layer underneath it isn't."
+> "Hot take: everyone's obsessed with NVIDIA but the real AI trade is power & cooling. You can't run a GPU you can't cool. Networking, energy, thermal — that's where the next 10x is hiding."
 
 **Output** — rebuilt for Xiaohongshu (小红书):
 
-> 🔥 说个有点反共识的观点：大家都在盯着英伟达，但AI真正的机会其实在「电力」和「散热」👀
+> 🔥 说个有点反共识的观点:大家都在盯着英伟达,但AI真正的机会其实在「电力」和「散热」👀
 >
-> 逻辑很简单——GPU再强，散不了热也跑不起来⚡️
+> 逻辑很简单——GPU再强,散不了热也跑不起来⚡️
 >
 > 网络、能源、散热… 这些「卖铲子」的环节才是下一个10倍藏的地方💰
 >
-> 英伟达已经是共识了，但它脚下那一层，还没什么人讨论。
+> 姐妹们怎么看?评论区聊聊～👇
 >
-> 姐妹们怎么看？评论区聊聊～👇
->
-> #AI投资 #英伟达 #美股 #投资笔记 #散户日记
+> #AI投资 #英伟达 #美股 #投资笔记
 
-It didn't translate the words. It changed structure, pacing, emoji norms, and added the community hook XHS posts live on — because that's what a native would do.
+It didn't translate the words. It changed structure, pacing, emoji norms, and added the community hook XHS posts live on — because that's what a native would do. The same method works for **any** target: English → Spanish Instagram, Japanese → Western LinkedIn, Chinese → English Reddit.
 
 ---
 
 ## What it handles
 
-**Cultural spheres:** English ↔ Chinese ↔ Japanese, any direction
+**Languages & cultures:** any, in any direction — the cultural-adaptation method is universal.
 
-**Platform registers:** LinkedIn · Xiaohongshu (小红书) · Weibo · Twitter/X · Instagram · Japanese formal/business · Japanese casual
+**Platform registers (examples, not a limit):** LinkedIn · Xiaohongshu (小红书) · Weibo · Twitter/X · Instagram · TikTok · Reddit · formal/business registers · marketing copy · emails
 
 ---
 
 ## Quality gate (bundled)
 
-Ships with `scripts/validate.py` — a heuristic checker that catches "this is secretly a literal translation" smells before you post: missing platform markers (emoji/hashtags on XHS, line breaks on LinkedIn, keigo on formal JP), wrong-language output, and structure that mirrors the source 1:1.
+Ships with `scripts/validate.py` — a heuristic checker for the most common targets (`xhs` · `weibo` · `linkedin` · `twitter` · `jp_formal` · `jp_casual`) that catches "this is secretly a literal translation" smells before you post: missing platform markers, wrong-language output, and structure that mirrors the source 1:1.
 
 ```bash
 python scripts/validate.py --target xhs --source source.txt --adapted adapted.txt
 ```
 
-Targets: `xhs` · `weibo` · `linkedin` · `twitter` · `jp_formal` · `jp_casual`. Pure Python 3, no dependencies. It flags smells; the native-fluency call stays human.
+Pure Python 3, no dependencies. For languages/platforms it doesn't cover, the native-fluency call stays yours.
 
 ---
 
@@ -63,9 +55,9 @@ Targets: `xhs` · `weibo` · `linkedin` · `twitter` · `jp_formal` · `jp_casua
 Once installed, just ask Claude naturally:
 
 - *"Post this on Xiaohongshu"*
-- *"Make this sound natural in Japanese"*
-- *"Rebuild this Chinese post for an English audience"*
-- *"Adapt this announcement across all three of my markets"*
+- *"Make this sound natural in Korean"*
+- *"Rewrite this English launch post for Spanish Instagram"*
+- *"Adapt this announcement for my Japanese audience"*
 
 The skill loads automatically when the destination has different cultural conventions than the source.
 
