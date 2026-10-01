@@ -1,6 +1,6 @@
 ---
 name: vibe-translator
-description: Adapt content across languages, cultures, and platforms so it reads as if a native wrote it from scratch — not a word-for-word translation, but a rebuild that respects tone, conventions, formatting, humor, and the unspoken rules of the target context. Works for ANY language and ANY platform, in any direction (LinkedIn, Xiaohongshu/小红书, Weibo, Twitter/X, Instagram, TikTok, Reddit, formal/business registers, marketing copy, emails, and more). Use whenever someone wants to move content across cultures, languages, or platforms. Trigger on phrases like "make this work for [platform]", "post this on [X]", "rewrite this for a [language/culture] audience", "localize this", "translate this", "make this sound natural in [language]", "adapt this for [market]", or any request where a direct translation would feel off, stiff, or foreign. Use even when the user only says "translate" but the destination has different cultural conventions than the source.
+description: Adapt content across languages, cultures, and platforms so it reads as if a native wrote it from scratch — not word-for-word translation but a rebuild respecting tone, conventions, formatting, humor, and unspoken rules. Any language, any platform, any direction (LinkedIn, 小红书, Weibo, X, Instagram, TikTok, Reddit, business register, marketing, email). Trigger on 'localize this', 'translate this', 'post this on [platform]', 'rewrite for a [culture] audience', 'make this sound native'. 中文：把内容跨语言、跨文化、跨平台改写，读起来像当地人从零写的——不是逐字翻译，而是尊重目标语境的语气、惯例、排版、幽默和潜规则重建。支持任意语言/平台/方向（小红书、微博、X、LinkedIn、IG、TikTok、商务、营销、邮件）。触发词：「改成适合小红书的」「发到 X 上」「本地化一下」「翻译这个」「听起来像母语」。
 ---
 
 # Vibe Translator
@@ -58,7 +58,9 @@ Examples, **not** an exhaustive list. The same method applies to any language or
 - Indirect, group-oriented, modest; keigo (敬語) + humility markers (恐縮ですが, おかげさまで); conclusions softened; reading-the-air (空気を読む)
 
 ### Instagram / TikTok (global)
-- Visual-first; caption supports the media; casual, aspirational; emoji-friendly; hashtag clusters
+- Visual-first; caption supports the media; casual, aspirational; emoji-friendly
+- Instagram: **hard cap of 5 hashtags** per post/Reel (since Dec 2025, first-comment tags included) — pick 3–5 specific ones; links in captions aren't clickable ("link in bio")
+- TikTok: a few relevant hashtags at the end; no hashtag wall
 
 ## Cultural dimensions to watch (universal — use for ANY language)
 
